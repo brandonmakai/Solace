@@ -23,7 +23,10 @@ struct SettingsView: View {
                         .clipShape(Circle())
                     
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(user.firstName, user.lastName)
+                        HStack{
+                            Text(user.firstName)
+                            Text(user.lastName)
+                        }
                             .font(.subheadline)
                             .fontWeight(.semibold)
                             .padding(.top,4)
