@@ -41,7 +41,7 @@ class ProfessionalView: ObservableObject {
         case nonBinary = "They/Them"
     }
     
-    var Professionals: [Professional] = []
+    @Published var Professionals: [Professional] = []
     
     func addMOCKProfessions() {
         Professionals.append(Professional(id: UUID(), icon: "pro1", firstName: "Melissa", lastName: "Smith", profession: .psychiatrists, gender: .female, location: CLLocationCoordinate2D(latitude: -34.34, longitude: 12.34)))

@@ -7,16 +7,13 @@
 
 import SwiftUI
 
-struct QuestionNavigation: View {
-    var body: some View {
+struct QuestionNavigation: ViewModifier {
+    func body(content: Content) -> some View {
             RoundedRectangle(cornerRadius: 30)
                 .frame(width: 350, height: 50)
                 .foregroundColor(.darkBrown)
                 .overlay (
-                    HStack(spacing: 4){
-                        Text("Next Steps")
-                        Image(systemName: "arrow.right")
-                    }
+                        content
                         .foregroundColor(.white)
                         .fontWeight(.semibold)
                         .font(.system(size: 30))
@@ -25,6 +22,8 @@ struct QuestionNavigation: View {
     }
 }
 
-#Preview {
-    QuestionNavigation()
+extension View {
+    func questionNavigation() -> some View {
+        modifier(QuestionNavigation())
+    }
 }

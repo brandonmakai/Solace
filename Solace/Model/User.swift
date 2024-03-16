@@ -58,9 +58,12 @@ class UserView: Identifiable, ObservableObject {
     
     static let MOCKUSER = User(id: UUID(), name: "Brandin", icon: "placeholder", currentLocation: CLLocationCoordinate2D(latitude: 34.56, longitude: 56.56))
     
-    func distanceBetween(user: User, professional: ProfessionalView.Professional) -> CLLocationDistance {
+    func distanceBetween(user: User, professional: ProfessionalView.Professional) -> Int {
         let userLocation = CLLocation(latitude: user.currentLocation.latitude, longitude: user.currentLocation.longitude)
         let professionalLocation = CLLocation(latitude: professional.location.latitude, longitude: professional.location.longitude)
-        return userLocation.distance(from: professionalLocation)
+        let distanceMeters = userLocation.distance(from: professionalLocation)
+        let distanceMiles = distanceMeters * 0.000621371
+        let roundedMileDistance = Int(distanceMiles.rounded())
+        return roundedMileDistance
     }
 }

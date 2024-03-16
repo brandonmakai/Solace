@@ -56,7 +56,11 @@ struct SymptomsQuestion: View {
                     LocationQuestion()
                         .navigationBarBackButtonHidden()
                 } label: {
-                    QuestionNavigation()
+                    HStack{
+                        Text("Next Steps")
+                        Image(systemName: "arrow.right")
+                    }
+                    .questionNavigation()
                 }
                 
             }
