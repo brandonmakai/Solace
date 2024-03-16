@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreLocation
 
-struct NearYouView: View {
+struct MatchView: View {
     @EnvironmentObject var professionalView: ProfessionalView
     @EnvironmentObject var userView: UserView
     @State var selectedProfessional: ProfessionalView.Professional
@@ -73,6 +73,6 @@ struct NearYouView: View {
 
 #Preview {
     let professionalView = ProfessionalView()
-    return NearYouView(selectedProfessional: ProfessionalView.Professional(id: UUID(), icon: "", firstName: "", lastName: "", profession: .psychiatrists, gender: .female, location: CLLocationCoordinate2D(latitude: 23.45, longitude: 12.34)))
+    return MatchView(selectedProfessional: ProfessionalView.Professional(id: UUID(), icon: "pro1", firstName: "Melissa", lastName: "Smith", profession: .psychiatrists, gender: .female, religion: .christian ,currentLocation: CLLocationCoordinate2D(latitude: -34.34, longitude: 12.34), meeting: .inPerson))
         .environmentObject(professionalView)
 }

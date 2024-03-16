@@ -17,8 +17,10 @@ class ProfessionalView: ObservableObject {
         let lastName: String
         let profession: Professions
         let gender: Gender
+        let religion: Religion
         let rating: Double? = nil
-        let location: CLLocationCoordinate2D
+        let currentLocation: CLLocationCoordinate2D
+        let meeting: MeetingLocation
         
         func hash(into hasher: inout Hasher) {
             hasher.combine(id)
@@ -30,22 +32,40 @@ class ProfessionalView: ObservableObject {
     }
     
     enum Professions: String {
-        case psychiatrists = "Psychiatrists"
-        case therapist = "Therapist"
-        case psychologists = "Psychologists"
+        case psychiatrists = "Psychiatrists" // Pair with any GeneralPreferences Selection
+        case therapist = "Therapist" // Pair with anything, but prescription
+        case psychologists = "Psychologists" // Pair with anything, but prescription
     }
     
     enum Gender: String {
-        case male = "He/Him"
-        case female = "She/Her"
-        case nonBinary = "They/Them"
+        case male = "He/Him" // Pair with male preferences
+        case female = "She/Her" // Pair with female preferences
+        case nonBinary = "They/Them" // Pair with nonBinary preferences
+        // If none pair with anything
+    }
+    
+    enum MeetingLocation: String {
+        case online = "Online"
+        case inPerson = "In Person"
+        case none = "No Preference"
+    }
+    
+    enum Religion: String {
+        case catholic = "Catholic"
+        case baptist = "Baptist"
+        case christian = "Christian"
+        case islam = "Islam"
+        case hindu = "Hindu"
+        case buddhist = "Buddhist"
+        case atheist = "Athiest"
+        case none = "No Preference"
     }
     
     @Published var Professionals: [Professional] = []
     
     func addMOCKProfessions() {
-        Professionals.append(Professional(id: UUID(), icon: "pro1", firstName: "Melissa", lastName: "Smith", profession: .psychiatrists, gender: .female, location: CLLocationCoordinate2D(latitude: -34.34, longitude: 12.34)))
-        Professionals.append(Professional(id: UUID(), icon: "pro2", firstName: "John", lastName: "Jackson", profession: .psychologists, gender: .male, location: CLLocationCoordinate2D(latitude: -34.34, longitude: 12.34)))
+        Professionals.append(Professional(id: UUID(), icon: "pro1", firstName: "Melissa", lastName: "Smith", profession: .psychiatrists, gender: .female, religion: .christian ,currentLocation: CLLocationCoordinate2D(latitude: -34.34, longitude: 12.34), meeting: .inPerson))
+        Professionals.append(Professional(id: UUID(), icon: "pro2", firstName: "John", lastName: "Joe", profession: .psychiatrists, gender: .male, religion: .islam ,currentLocation: CLLocationCoordinate2D(latitude: -34.34, longitude: 12.34), meeting: .online))
     }
     
 }

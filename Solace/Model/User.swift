@@ -12,7 +12,8 @@ class UserView: Identifiable, ObservableObject {
     
     struct User {
         let id: UUID
-        let name: String
+        let firstName: String
+        let lastName: String
         let icon: String
         let currentLocation: CLLocationCoordinate2D
         let preferences: Preference? = nil
@@ -56,11 +57,11 @@ class UserView: Identifiable, ObservableObject {
         case none = "No Preferences"
     }
     
-    static let MOCKUSER = User(id: UUID(), name: "Brandin", icon: "placeholder", currentLocation: CLLocationCoordinate2D(latitude: 34.56, longitude: 56.56))
+    static let MOCKUSER = User(id: UUID(), firstName: "Brandon", lastName: "Williams", icon: "placeholder", currentLocation: CLLocationCoordinate2D(latitude: 34.56, longitude: 56.56))
     
     func distanceBetween(user: User, professional: ProfessionalView.Professional) -> Int {
         let userLocation = CLLocation(latitude: user.currentLocation.latitude, longitude: user.currentLocation.longitude)
-        let professionalLocation = CLLocation(latitude: professional.location.latitude, longitude: professional.location.longitude)
+        let professionalLocation = CLLocation(latitude: professional.currentLocation.latitude, longitude: professional.currentLocation.longitude)
         let distanceMeters = userLocation.distance(from: professionalLocation)
         let distanceMiles = distanceMeters * 0.000621371
         let roundedMileDistance = Int(distanceMiles.rounded())
