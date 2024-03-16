@@ -40,7 +40,7 @@ struct ReligionQuestion: View {
                 
                 Spacer()
                 NavigationLink {
-                    NearYouView(selectedProfessional: ProfessionalView.Professional(id: UUID(), icon: "", firstName: "", lastName: "", profession: .psychiatrists, gender: .female, location: CLLocationCoordinate2D(latitude: 0.00, longitude: 0.00)))
+                    MatchView(selectedProfessional: ProfessionalView.Professional(id: UUID(), icon: "pro1", firstName: "Melissa", lastName: "Smith", profession: .psychiatrists, gender: .female, religion: .christian ,currentLocation: CLLocationCoordinate2D(latitude: -34.34, longitude: 12.34), meeting: .inPerson))
                         .navigationBarBackButtonHidden()
                         .onAppear {
                             professionalView.addMOCKProfessions()

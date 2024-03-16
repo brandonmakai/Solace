@@ -67,4 +67,20 @@ class UserView: Identifiable, ObservableObject {
         let roundedMileDistance = Int(distanceMiles.rounded())
         return roundedMileDistance
     }
+    
+    func closestProfessionals(user: User, professionalView: ProfessionalView) -> [ProfessionalView.Professional] {
+        // Calculate distances for all professionals
+        let professionalsWithDistance = professionalView.Professionals.map { professional -> (ProfessionalView.Professional, Int) in
+            let distance = distanceBetween(user: user, professional: professional)
+            return (professional, distance)
+        }
+        
+        // Sort professionals based on distance
+        let sortedProfessionals = professionalsWithDistance.sorted { $0.1 < $1.1 }
+        
+        // Take the closest 4 professionals
+        let closestProfessionals = sortedProfessionals.prefix(4).map { $0.0 }
+        
+        return closestProfessionals
+    }
 }
