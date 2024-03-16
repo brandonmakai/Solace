@@ -10,55 +10,59 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var userView: UserView
     @EnvironmentObject var professionalView: ProfessionalView
-    let user = UserView.MOCKUSER
+    @EnvironmentObject var appointmentManager: AppointmentManager
     @State var Online: ProfessionalView.MeetingLocation
+    
+    @EnvironmentObject var authService: AuthService
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                ZStack(alignment: .bottom) {
-                    VStack(alignment: .leading, spacing: 20) {
-                            Text("Hello, \(user.firstName) ")
-                                .customTitle()
-                            
-                            VStack(alignment: .leading){
-                                SectionHeader("Discuss With Professionals")
+        if let user = authService.currentUser {
+            NavigationStack {
+                ScrollView {
+                    ZStack(alignment: .bottom) {
+                        VStack(alignment: .leading, spacing: 20) {
+                                Text("Hello, \(user.firstName) ")
+                                    .customTitle()
                                 
-                                
-                                // Shuffle the Professionals array and take the first three professionals
-                                HStack{
-                                    ForEach(Array(professionalView.Professionals.shuffled().prefix(3)), id: \.self) { professional in
-                                        professionalRow(professional: professional)
+                                VStack(alignment: .leading){
+                                    SectionHeader("Discuss With Professionals")
+                                    
+                                    
+                                    // Shuffle the Professionals array and take the first three professionals
+                                    HStack{
+                                        ForEach(Array(professionalView.Professionals.shuffled().prefix(3)), id: \.self) { professional in
+                                            professionalRow(professional: professional)
+                                        }
                                     }
                                 }
-                            }
-                            VStack(alignment: .leading){
-                                SectionHeader("Appointments")
-                                ForEach(appointments, id: \.self) { appointment in
-                                    appointmentRow(appointment: appointment, isOnline: Online == ProfessionalView.MeetingLocation.online)
+                                VStack(alignment: .leading){
+                                    SectionHeader("Appointments")
+                                    ForEach(AppointmentManager.shared.appointments, id: \.self) { appointment in
+                                        appointmentRow(appointment: appointment, isOnline: Online == ProfessionalView.MeetingLocation.online)
+                                        
+                                    }
                                     
                                 }
                                 
-                            }
-                            
-                            Spacer()
-                    }
-                    VStack(alignment: .leading){
-                        SectionHeader("Professionals Near You")
-                            .padding(.leading, 30)
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 30)
-                                .frame(width: 400, height: 300)
-                                .foregroundColor(.darkBrown)
-                            ForEach(userView.closestProfessionals(user: user, professionalView: professionalView), id: \.self) { professional in
-                                closestProfessionalRow(professional: professional)
+                                Spacer()
+                        }
+                        VStack(alignment: .leading){
+                            SectionHeader("Professionals Near You")
+                                .padding(.leading, 30)
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 30)
+                                    .frame(width: 400, height: 300)
+                                    .foregroundColor(.darkBrown)
+                                ForEach(userView.closestProfessionals(user: user, professionalView: professionalView) ?? [ProfessionalView.Professional(id: UUID(), icon: "pro1", firstName: "John", lastName: "Doe", profession: .psychiatrists, gender: .female, religion: .atheist, currentLocation: nil, meeting: .inPerson)], id: \.self) { professional in
+                                    closestProfessionalRow(professional: professional)
+                                }
                             }
                         }
+                        .padding(.top, 456)
                     }
-                    .padding(.top, 456)
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.brownGradient)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.brownGradient)
         }
     }
     func SectionHeader(_ text: String) -> some View {

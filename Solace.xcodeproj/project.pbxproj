@@ -16,7 +16,7 @@
 		EFCD4CC92BA4D74D005C0DFA /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CC82BA4D74D005C0DFA /* Date.swift */; };
 		EFCD4CCB2BA4ED7E005C0DFA /* Professional.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CCA2BA4ED7E005C0DFA /* Professional.swift */; };
 		EFCD4CCD2BA4F18B005C0DFA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CCC2BA4F18B005C0DFA /* User.swift */; };
-		EFCD4CCF2BA4F26C005C0DFA /* NearYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CCE2BA4F26C005C0DFA /* NearYouView.swift */; };
+		EFCD4CCF2BA4F26C005C0DFA /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CCE2BA4F26C005C0DFA /* MatchView.swift */; };
 		EFCD4CD22BA4F731005C0DFA /* UserTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CD12BA4F731005C0DFA /* UserTabView.swift */; };
 		EFCD4CD42BA4F8D7005C0DFA /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CD32BA4F8D7005C0DFA /* SelectView.swift */; };
 		EFCD4CD62BA50031005C0DFA /* StreakCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CD52BA50031005C0DFA /* StreakCounter.swift */; };
@@ -28,6 +28,30 @@
 		EFCD4CE32BA556A3005C0DFA /* CustomTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CE22BA556A3005C0DFA /* CustomTitle.swift */; };
 		EFCD4CE52BA5599B005C0DFA /* GenderQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CE42BA5599B005C0DFA /* GenderQuestion.swift */; };
 		EFCD4CE72BA55ACF005C0DFA /* ReligionQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CE62BA55ACF005C0DFA /* ReligionQuestion.swift */; };
+		EFCD4CE92BA583D5005C0DFA /* MatchAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CE82BA583D5005C0DFA /* MatchAlgorithm.swift */; };
+		EFCD4CEB2BA591C7005C0DFA /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CEA2BA591C7005C0DFA /* Appointment.swift */; };
+		EFCD4CED2BA5A2C0005C0DFA /* PrescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CEC2BA5A2C0005C0DFA /* PrescriptionView.swift */; };
+		EFCD4CEF2BA5A2D7005C0DFA /* Prescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CEE2BA5A2D7005C0DFA /* Prescription.swift */; };
+		EFCD4CF42BA5B49C005C0DFA /* AppointmentManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CF32BA5B49C005C0DFA /* AppointmentManagerView.swift */; };
+		EFCD4CF62BA5B88E005C0DFA /* PrescriptionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CF52BA5B88E005C0DFA /* PrescriptionSheetView.swift */; };
+		EFCD4CF82BA5BA08005C0DFA /* AppointmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CF72BA5BA08005C0DFA /* AppointmentManager.swift */; };
+		EFCD4CFA2BA5C4B5005C0DFA /* CustomCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CF92BA5C4B5005C0DFA /* CustomCalendar.swift */; };
+		EFCD4CFC2BA5CF60005C0DFA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CFB2BA5CF60005C0DFA /* LocationManager.swift */; };
+		EFCD4CFF2BA5D837005C0DFA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4CFE2BA5D837005C0DFA /* SettingsView.swift */; };
+		EFCD4D012BA5D9D9005C0DFA /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4D002BA5D9D9005C0DFA /* SettingsRowView.swift */; };
+		EFCD4D032BA5DA10005C0DFA /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4D022BA5DA10005C0DFA /* InputView.swift */; };
+		EFCD4D052BA5DB70005C0DFA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4D042BA5DB70005C0DFA /* SignInView.swift */; };
+		EFCD4D072BA5DCC8005C0DFA /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4D062BA5DCC8005C0DFA /* RegistrationView.swift */; };
+		EFCD4D092BA5E504005C0DFA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD4D082BA5E504005C0DFA /* AuthService.swift */; };
+		EFCD4D5E2BA5EAF7005C0DFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFCD4D5D2BA5EAF7005C0DFA /* GoogleService-Info.plist */; };
+		EFCD4D612BA5EB35005C0DFA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EFCD4D602BA5EB35005C0DFA /* FirebaseAnalytics */; };
+		EFCD4D632BA5EB35005C0DFA /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = EFCD4D622BA5EB35005C0DFA /* FirebaseAnalyticsOnDeviceConversion */; };
+		EFCD4D652BA5EB35005C0DFA /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EFCD4D642BA5EB35005C0DFA /* FirebaseAnalyticsSwift */; };
+		EFCD4D672BA5EB35005C0DFA /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = EFCD4D662BA5EB35005C0DFA /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		EFCD4D692BA5EB35005C0DFA /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = EFCD4D682BA5EB35005C0DFA /* FirebaseAppCheck */; };
+		EFCD4D6C2BA5EBBC005C0DFA /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = EFCD4D6B2BA5EBBC005C0DFA /* FirebaseStorage */; };
+		EFCD4D6E2BA5EBC7005C0DFA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EFCD4D6D2BA5EBC7005C0DFA /* FirebaseAuth */; };
+		EFCD4D702BA5EBCC005C0DFA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EFCD4D6F2BA5EBCC005C0DFA /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +65,7 @@
 		EFCD4CC82BA4D74D005C0DFA /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		EFCD4CCA2BA4ED7E005C0DFA /* Professional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professional.swift; sourceTree = "<group>"; };
 		EFCD4CCC2BA4F18B005C0DFA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		EFCD4CCE2BA4F26C005C0DFA /* NearYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearYouView.swift; sourceTree = "<group>"; };
+		EFCD4CCE2BA4F26C005C0DFA /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		EFCD4CD12BA4F731005C0DFA /* UserTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabView.swift; sourceTree = "<group>"; };
 		EFCD4CD32BA4F8D7005C0DFA /* SelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
 		EFCD4CD52BA50031005C0DFA /* StreakCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakCounter.swift; sourceTree = "<group>"; };
@@ -53,6 +77,22 @@
 		EFCD4CE22BA556A3005C0DFA /* CustomTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitle.swift; sourceTree = "<group>"; };
 		EFCD4CE42BA5599B005C0DFA /* GenderQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderQuestion.swift; sourceTree = "<group>"; };
 		EFCD4CE62BA55ACF005C0DFA /* ReligionQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReligionQuestion.swift; sourceTree = "<group>"; };
+		EFCD4CE82BA583D5005C0DFA /* MatchAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchAlgorithm.swift; sourceTree = "<group>"; };
+		EFCD4CEA2BA591C7005C0DFA /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		EFCD4CEC2BA5A2C0005C0DFA /* PrescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionView.swift; sourceTree = "<group>"; };
+		EFCD4CEE2BA5A2D7005C0DFA /* Prescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prescription.swift; sourceTree = "<group>"; };
+		EFCD4CF32BA5B49C005C0DFA /* AppointmentManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentManagerView.swift; sourceTree = "<group>"; };
+		EFCD4CF52BA5B88E005C0DFA /* PrescriptionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionSheetView.swift; sourceTree = "<group>"; };
+		EFCD4CF72BA5BA08005C0DFA /* AppointmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentManager.swift; sourceTree = "<group>"; };
+		EFCD4CF92BA5C4B5005C0DFA /* CustomCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendar.swift; sourceTree = "<group>"; };
+		EFCD4CFB2BA5CF60005C0DFA /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		EFCD4CFE2BA5D837005C0DFA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EFCD4D002BA5D9D9005C0DFA /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		EFCD4D022BA5DA10005C0DFA /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		EFCD4D042BA5DB70005C0DFA /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		EFCD4D062BA5DCC8005C0DFA /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		EFCD4D082BA5E504005C0DFA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		EFCD4D5D2BA5EAF7005C0DFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +100,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFCD4D652BA5EB35005C0DFA /* FirebaseAnalyticsSwift in Frameworks */,
+				EFCD4D612BA5EB35005C0DFA /* FirebaseAnalytics in Frameworks */,
+				EFCD4D632BA5EB35005C0DFA /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				EFCD4D692BA5EB35005C0DFA /* FirebaseAppCheck in Frameworks */,
+				EFCD4D672BA5EB35005C0DFA /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				EFCD4D702BA5EBCC005C0DFA /* FirebaseFirestore in Frameworks */,
+				EFCD4D6E2BA5EBC7005C0DFA /* FirebaseAuth in Frameworks */,
+				EFCD4D6C2BA5EBBC005C0DFA /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +119,7 @@
 			children = (
 				EFCD4CAD2BA4BC00005C0DFA /* Solace */,
 				EFCD4CAC2BA4BC00005C0DFA /* Products */,
+				EFCD4D6A2BA5EBBC005C0DFA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +155,7 @@
 		EFCD4CBC2BA4CA28005C0DFA /* App */ = {
 			isa = PBXGroup;
 			children = (
+				EFCD4D5D2BA5EAF7005C0DFA /* GoogleService-Info.plist */,
 				EFCD4CB22BA4BC02005C0DFA /* Assets.xcassets */,
 				EFCD4CAE2BA4BC00005C0DFA /* SolaceApp.swift */,
 			);
@@ -117,6 +167,8 @@
 			children = (
 				EFCD4CCA2BA4ED7E005C0DFA /* Professional.swift */,
 				EFCD4CCC2BA4F18B005C0DFA /* User.swift */,
+				EFCD4CEA2BA591C7005C0DFA /* Appointment.swift */,
+				EFCD4CEE2BA5A2D7005C0DFA /* Prescription.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -124,10 +176,13 @@
 		EFCD4CBF2BA4CA44005C0DFA /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				EFCD4CCE2BA4F26C005C0DFA /* NearYouView.swift */,
+				EFCD4CFD2BA5D81C005C0DFA /* Auth */,
+				EFCD4CF22BA5B487005C0DFA /* Professionals */,
+				EFCD4CEC2BA5A2C0005C0DFA /* PrescriptionView.swift */,
+				EFCD4CB02BA4BC00005C0DFA /* ContentView.swift */,
+				EFCD4CCE2BA4F26C005C0DFA /* MatchView.swift */,
 				EFCD4CD72BA53C8B005C0DFA /* Questions */,
 				EFCD4CD02BA4F724005C0DFA /* TabBar */,
-				EFCD4CB02BA4BC00005C0DFA /* ContentView.swift */,
 				EFCD4CD32BA4F8D7005C0DFA /* SelectView.swift */,
 			);
 			path = Components;
@@ -139,11 +194,13 @@
 				EFCD4CC22BA4CAE0005C0DFA /* Color.swift */,
 				EFCD4CC42BA4D2B5005C0DFA /* RowCalendar.swift */,
 				EFCD4CC82BA4D74D005C0DFA /* Date.swift */,
+				EFCD4CF72BA5BA08005C0DFA /* AppointmentManager.swift */,
 				EFCD4CD52BA50031005C0DFA /* StreakCounter.swift */,
 				EFCD4CDA2BA53CEE005C0DFA /* LoadingBar.swift */,
 				EFCD4CDE2BA54C50005C0DFA /* SelectionOption.swift */,
 				EFCD4CE02BA54D43005C0DFA /* QuestionNavigation.swift */,
 				EFCD4CE22BA556A3005C0DFA /* CustomTitle.swift */,
+				EFCD4CF92BA5C4B5005C0DFA /* CustomCalendar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,6 +208,9 @@
 		EFCD4CC12BA4CA67005C0DFA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				EFCD4CE82BA583D5005C0DFA /* MatchAlgorithm.swift */,
+				EFCD4CFB2BA5CF60005C0DFA /* LocationManager.swift */,
+				EFCD4D082BA5E504005C0DFA /* AuthService.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -174,6 +234,34 @@
 			path = Questions;
 			sourceTree = "<group>";
 		};
+		EFCD4CF22BA5B487005C0DFA /* Professionals */ = {
+			isa = PBXGroup;
+			children = (
+				EFCD4CF32BA5B49C005C0DFA /* AppointmentManagerView.swift */,
+				EFCD4CF52BA5B88E005C0DFA /* PrescriptionSheetView.swift */,
+			);
+			path = Professionals;
+			sourceTree = "<group>";
+		};
+		EFCD4CFD2BA5D81C005C0DFA /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				EFCD4CFE2BA5D837005C0DFA /* SettingsView.swift */,
+				EFCD4D002BA5D9D9005C0DFA /* SettingsRowView.swift */,
+				EFCD4D022BA5DA10005C0DFA /* InputView.swift */,
+				EFCD4D042BA5DB70005C0DFA /* SignInView.swift */,
+				EFCD4D062BA5DCC8005C0DFA /* RegistrationView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		EFCD4D6A2BA5EBBC005C0DFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -190,6 +278,16 @@
 			dependencies = (
 			);
 			name = Solace;
+			packageProductDependencies = (
+				EFCD4D602BA5EB35005C0DFA /* FirebaseAnalytics */,
+				EFCD4D622BA5EB35005C0DFA /* FirebaseAnalyticsOnDeviceConversion */,
+				EFCD4D642BA5EB35005C0DFA /* FirebaseAnalyticsSwift */,
+				EFCD4D662BA5EB35005C0DFA /* FirebaseAnalyticsWithoutAdIdSupport */,
+				EFCD4D682BA5EB35005C0DFA /* FirebaseAppCheck */,
+				EFCD4D6B2BA5EBBC005C0DFA /* FirebaseStorage */,
+				EFCD4D6D2BA5EBC7005C0DFA /* FirebaseAuth */,
+				EFCD4D6F2BA5EBCC005C0DFA /* FirebaseFirestore */,
+			);
 			productName = Solace;
 			productReference = EFCD4CAB2BA4BC00005C0DFA /* Solace.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +316,9 @@
 				Base,
 			);
 			mainGroup = EFCD4CA22BA4BC00005C0DFA;
+			packageReferences = (
+				EFCD4D5F2BA5EB35005C0DFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = EFCD4CAC2BA4BC00005C0DFA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,6 +335,7 @@
 			files = (
 				EFCD4CB62BA4BC02005C0DFA /* Preview Assets.xcassets in Resources */,
 				EFCD4CB32BA4BC02005C0DFA /* Assets.xcassets in Resources */,
+				EFCD4D5E2BA5EAF7005C0DFA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,23 +346,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFCD4D072BA5DCC8005C0DFA /* RegistrationView.swift in Sources */,
 				EFCD4CDB2BA53CEE005C0DFA /* LoadingBar.swift in Sources */,
+				EFCD4D032BA5DA10005C0DFA /* InputView.swift in Sources */,
+				EFCD4CF62BA5B88E005C0DFA /* PrescriptionSheetView.swift in Sources */,
+				EFCD4D012BA5D9D9005C0DFA /* SettingsRowView.swift in Sources */,
 				EFCD4CD42BA4F8D7005C0DFA /* SelectView.swift in Sources */,
 				EFCD4CD62BA50031005C0DFA /* StreakCounter.swift in Sources */,
+				EFCD4CEF2BA5A2D7005C0DFA /* Prescription.swift in Sources */,
+				EFCD4CFA2BA5C4B5005C0DFA /* CustomCalendar.swift in Sources */,
 				EFCD4CE52BA5599B005C0DFA /* GenderQuestion.swift in Sources */,
 				EFCD4CB12BA4BC00005C0DFA /* ContentView.swift in Sources */,
 				EFCD4CC92BA4D74D005C0DFA /* Date.swift in Sources */,
-				EFCD4CCF2BA4F26C005C0DFA /* NearYouView.swift in Sources */,
+				EFCD4CCF2BA4F26C005C0DFA /* MatchView.swift in Sources */,
 				EFCD4CE72BA55ACF005C0DFA /* ReligionQuestion.swift in Sources */,
 				EFCD4CE32BA556A3005C0DFA /* CustomTitle.swift in Sources */,
+				EFCD4D052BA5DB70005C0DFA /* SignInView.swift in Sources */,
+				EFCD4CF82BA5BA08005C0DFA /* AppointmentManager.swift in Sources */,
 				EFCD4CCB2BA4ED7E005C0DFA /* Professional.swift in Sources */,
 				EFCD4CD92BA53CE2005C0DFA /* SymptomsQuestion.swift in Sources */,
+				EFCD4CF42BA5B49C005C0DFA /* AppointmentManagerView.swift in Sources */,
 				EFCD4CAF2BA4BC00005C0DFA /* SolaceApp.swift in Sources */,
+				EFCD4CED2BA5A2C0005C0DFA /* PrescriptionView.swift in Sources */,
+				EFCD4CFF2BA5D837005C0DFA /* SettingsView.swift in Sources */,
+				EFCD4CEB2BA591C7005C0DFA /* Appointment.swift in Sources */,
 				EFCD4CC32BA4CAE0005C0DFA /* Color.swift in Sources */,
 				EFCD4CDF2BA54C50005C0DFA /* SelectionOption.swift in Sources */,
 				EFCD4CE12BA54D43005C0DFA /* QuestionNavigation.swift in Sources */,
+				EFCD4CE92BA583D5005C0DFA /* MatchAlgorithm.swift in Sources */,
 				EFCD4CC52BA4D2B5005C0DFA /* RowCalendar.swift in Sources */,
+				EFCD4CFC2BA5CF60005C0DFA /* LocationManager.swift in Sources */,
 				EFCD4CCD2BA4F18B005C0DFA /* User.swift in Sources */,
+				EFCD4D092BA5E504005C0DFA /* AuthService.swift in Sources */,
 				EFCD4CD22BA4F731005C0DFA /* UserTabView.swift in Sources */,
 				EFCD4CDD2BA54BDA005C0DFA /* LocationQuestion.swift in Sources */,
 			);
@@ -468,6 +585,60 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EFCD4D5F2BA5EB35005C0DFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.22.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EFCD4D602BA5EB35005C0DFA /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFCD4D5F2BA5EB35005C0DFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		EFCD4D622BA5EB35005C0DFA /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFCD4D5F2BA5EB35005C0DFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		EFCD4D642BA5EB35005C0DFA /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFCD4D5F2BA5EB35005C0DFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		EFCD4D662BA5EB35005C0DFA /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFCD4D5F2BA5EB35005C0DFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		EFCD4D682BA5EB35005C0DFA /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFCD4D5F2BA5EB35005C0DFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		EFCD4D6B2BA5EBBC005C0DFA /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFCD4D5F2BA5EB35005C0DFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		EFCD4D6D2BA5EBC7005C0DFA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFCD4D5F2BA5EB35005C0DFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		EFCD4D6F2BA5EBCC005C0DFA /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFCD4D5F2BA5EB35005C0DFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EFCD4CA32BA4BC00005C0DFA /* Project object */;
 }

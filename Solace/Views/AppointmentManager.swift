@@ -10,6 +10,7 @@ import SwiftUI
 class AppointmentManager: ObservableObject {
     @EnvironmentObject var professionalView: ProfessionalView
     @EnvironmentObject var userView: UserView
+    @EnvironmentObject var authService: AuthService
     static var shared = AppointmentManager()
     
     public var appointments: [Appointment] = []
@@ -33,12 +34,12 @@ class AppointmentManager: ObservableObject {
             print("No professionals available")
             return nil
         }
-        let selectedUser = UserView.MOCKUSER
+        let selectedUser = authService.currentUser
         let date = Date(timeIntervalSinceNow: 86400)
         
         let newAppointment = Appointment(id: UUID(),
                                          professional: selectedProfessional,
-                                         user: selectedUser,
+                                         user: authService.currentUser,
                                          date: date,
                                          meeting: .inPerson)
         

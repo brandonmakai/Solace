@@ -24,12 +24,11 @@ struct SolaceApp: App {
     @StateObject var professionalView = ProfessionalView()
     @StateObject var userView = UserView()
     @StateObject var appointmentManager = AppointmentManager()
+    @StateObject var authService = AuthService()
     var body: some Scene {
         WindowGroup {
-            ReligionQuestion(currentIndex: 3)
-                .environmentObject(professionalView)
-                .environmentObject(userView)
-                .environmentObject(appointmentManager)
+            SignInView()
+                .environmentObject(authService)
         }
     }
 }

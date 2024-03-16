@@ -5,6 +5,7 @@
 //  Created by Brandon Williams on 3/16/24.
 //
 
+/*
 import SwiftUI
 import CoreLocation
 
@@ -16,7 +17,7 @@ struct PrescriptionView: View {
             Text("Prescriptions")
                 .customTitle()
                 // TODO: Please make it an emptyView if there is no prescriptions
-            ForEach(user.prescriptions ?? [Prescription(id: UUID(), name: "", professoinal: ProfessionalView.Professional(id: UUID(), icon: "pro1", firstName: "Melissa", lastName: "Smith", profession: .psychiatrists, gender: .female, religion: .christian ,currentLocation: CLLocationCoordinate2D(latitude: -34.34, longitude: 12.34), meeting: .inPerson), user: user)], id: \.id) { prescription in
+            ForEach(user.prescriptions ?? [Prescription(id: UUID(), name: "", professoinal: ProfessionalView.Professional(id: UUID(), icon: "pro1", firstName: "Melissa", lastName: "Smith", profession: .psychiatrists, gender: .female, religion: .christian ,currentLocation: CLLocation(latitude: -34.34, longitude: 12.34), meeting: .inPerson), user: user)], id: \.id) { prescription in
                     prescriptionRow(prescription: prescription)
                 
             }
@@ -59,3 +60,4 @@ struct PrescriptionView: View {
 #Preview {
     PrescriptionView()
 }
+*/

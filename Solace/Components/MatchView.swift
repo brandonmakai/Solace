@@ -19,16 +19,16 @@ struct MatchView: View {
                 .customTitle()
             
             LazyVGrid(columns: [GridItem(.flexible(), spacing: -20), GridItem(.flexible())]) {
-                            ForEach(professionalView.Professionals, id: \.id) { professional in
-                                professionalRow(user: user, professional: professional)
-                                    .gesture (
-                                    TapGesture()
-                                        .onEnded{ gesture in
-                                            selectedProfessional = professional
-                                        }
-                                    )
-                            }
-                        }
+                ForEach(professionalView.Professionals, id: \.id) { professional in
+                    professionalRow(user: user, professional: professional)
+                        .gesture (
+                            TapGesture()
+                                .onEnded{ gesture in
+                                    selectedProfessional = professional
+                                }
+                        )
+                }
+            }
             
             Spacer()
             
@@ -58,7 +58,11 @@ struct MatchView: View {
                             .font(.system(size: 20))
                         VStack(alignment: .leading){
                             Text("\(professional.profession.rawValue)")
-                            Text("\(userView.distanceBetween(user: user, professional: professional)) mi away")
+                            if let distance = userView.distanceBetween(user: user, professional: professional) {
+                                Text("\(distance) mi away")
+                            } else {
+                                Text("Distance Unknwon")
+                            }
                         }
                         .foregroundColor(.white)
                         .font(.system(size: 15))
@@ -67,12 +71,13 @@ struct MatchView: View {
                 )
                 .offset(x: -10, y: 90)
         }
-        
     }
+    
 }
+
 
 #Preview {
     let professionalView = ProfessionalView()
-    return MatchView(selectedProfessional: ProfessionalView.Professional(id: UUID(), icon: "pro1", firstName: "Melissa", lastName: "Smith", profession: .psychiatrists, gender: .female, religion: .christian ,currentLocation: CLLocationCoordinate2D(latitude: -34.34, longitude: 12.34), meeting: .inPerson))
+    return MatchView(selectedProfessional: ProfessionalView.Professional(id: UUID(), icon: "pro1", firstName: "Melissa", lastName: "Smith", profession: .psychiatrists, gender: .female, religion: .christian ,currentLocation: Location(latitude: -34.34, longitude: 12.34), meeting: .inPerson))
         .environmentObject(professionalView)
 }

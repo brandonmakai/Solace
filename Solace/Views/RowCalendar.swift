@@ -18,11 +18,12 @@ struct RowCalendar: View {
                         VStack{
                             Text(weekday)
                             Text("\(date)")
+                                .font(.system(size: 25))
                         }
                     }
                 }
                 .foregroundColor(Color.secondary)
-                .font(.caption)
+                .font(.headline)
                 
             }
             

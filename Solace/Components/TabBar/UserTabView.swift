@@ -13,7 +13,7 @@ struct UserTabView: View {
     
     var body: some View {
         TabView{
-            ContentView()
+            ContentView( Online: ProfessionalView.MeetingLocation.inPerson)
                 .tabItem { Label("Home", systemImage: "house") }
                 .onAppear {
                     professionalView.addMOCKProfessions()

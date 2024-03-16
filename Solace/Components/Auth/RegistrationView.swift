@@ -13,61 +13,79 @@ struct RegistrationView: View {
     @State private var password = ""
     @State private var firstName = ""
     @State private var lastName = ""
+    @State private var confirmPassword = ""
+    
+    @EnvironmentObject var authService: AuthService
+    
     var body: some View {
-        NavigationStack{
-            VStack{
-                Image("tearDrop")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 150, height: 150)
-                    .padding(.vertical, 32)
-                
-                // Form Field
-                VStack(spacing: 24) {
-                    InputView(text: $email, title: "Email Address", placeholder: "name@example.com")
-                        .autocorrectionDisabled()
-                    InputView(text: $password, title: "Password", placeholder: "Enter your Password")
-                    InputView(text: $firstName, title: "First Name", placeholder: "Enter your first name")
-                    InputView(text: $lastName, title: "lastName", placeholder: "Enter your last name")
+            NavigationStack{
+                VStack{
+                    Image("tearDrop")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 150, height: 150)
+                        .padding(.vertical, 32)
                     
-                }
-                .padding(.horizontal)
-                .padding(.top, 12)
-                
-                // Sign In Button
-                Button {
-                    print("log user in")
-                } label: {
-                    HStack {
-                        Text("SIGN IN")
-                            .fontWeight(.semibold)
-                        Image(systemName: "arrow.right")
+                    // Form Field
+                    VStack(spacing: 24) {
+                        
+                        InputView(text: $firstName, title: "First Name", placeholder: "Enter your first name")
+                        InputView(text: $lastName, title: "lastName", placeholder: "Enter your last name")
+                        InputView(text: $email, title: "Email Address", placeholder: "name@example.com")
+                            .autocorrectionDisabled()
+                        InputView(text: $password, title: "Password", placeholder: "Enter your Password", isSecureField: true)
+                        ZStack {
+                            InputView(text: $confirmPassword, title: "Confirm Password", placeholder: "Enter your Password", isSecureField: true)
+                            if !password.isEmpty && !confirmPassword.isEmpty {
+                                if password == confirmPassword {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .imageScale(.large)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color(.systemGreen))
+                                }
+                            }
+                        }
+                        
                     }
-                    .foregroundColor(.darkBrown)
-                    .frame(width: UIScreen.main.bounds.width - 32, height: 48)
-                }
-                .background(Color.lightYellow)
-                .cornerRadius(10)
-                .padding(.top, 24)
-                
-                Spacer()
-                
-                // sign up button
-                
-                NavigationLink {
-                    RegistrationView()
-                        .navigationBarBackButtonHidden(true)
-                }label: {
-                    HStack(spacing: 3) {
-                        Text("Dont Have An Account")
-                        Text("Sign Up")
-                            .fontWeight(.bold)
+                    .padding(.horizontal)
+                    .padding(.top, 12)
+                    
+                    // Sign In Button
+                    Button {
+                        Task{
+                            try await authService.createUser(withEmail: email, password:password, firstName: firstName, lastName: lastName)
+                        }
+                    } label: {
+                        HStack {
+                            Text("SIGN IN")
+                                .fontWeight(.semibold)
+                            Image(systemName: "arrow.right")
+                        }
+                        .foregroundColor(.darkBrown)
+                        .frame(width: UIScreen.main.bounds.width - 32, height: 48)
                     }
-                    .font(.system(size: 14))
+                    .background(Color.lightYellow)
+                    .cornerRadius(10)
+                    .padding(.top, 24)
+                    
+                    Spacer()
+                    
+                    // sign up button
+                    
+                    NavigationLink {
+                        RegistrationView()
+                            .navigationBarBackButtonHidden(true)
+                    }label: {
+                        HStack(spacing: 3) {
+                            Text("Dont Have An Account")
+                            Text("Sign Up")
+                                .fontWeight(.bold)
+                        }
+                        .font(.system(size: 14))
+                    }
+                    .tint(.darkBrown)
                 }
-                .tint(.darkBrown)
             }
-        }
     }
 }
 
