@@ -13,6 +13,7 @@ struct CustomTitle: ViewModifier {
             .font(.largeTitle)
             .fontWeight(.semibold)
             .padding(.trailing, 30)
+            .foregroundColor(.white)
             .padding(.top, 20)
     }
 }

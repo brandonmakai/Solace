@@ -8,11 +8,27 @@
 import SwiftUI
 
 struct UserTabView: View {
+    @EnvironmentObject var professionalView: ProfessionalView
+    @EnvironmentObject var userView: UserView
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView{
+            ContentView()
+                .tabItem { Label("Home", systemImage: "house") }
+                .onAppear {
+                    professionalView.addMOCKProfessions()
+                }
+                .environmentObject(professionalView)
+                .environmentObject(userView)
+        }
+        .tint(.white)
     }
 }
 
 #Preview {
-    UserTabView()
+    let userView = UserView()
+
+    return UserTabView()
+        .environmentObject(userView)
+
 }
