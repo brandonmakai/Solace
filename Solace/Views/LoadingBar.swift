@@ -8,11 +8,35 @@
 import SwiftUI
 
 struct LoadingBar: View {
+    @State var currentIndex: Int
+    @State var width: CGFloat = 0
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack(alignment: .leading){
+            RoundedRectangle(cornerRadius: 15)
+                .frame(width: 300, height: 15)
+                .foregroundColor(Color(.systemGray5))
+            RoundedRectangle(cornerRadius: 15)
+                .frame(width: width, height: 15)
+                .foregroundColor(.darkBrown)
+        }
+        .onAppear {
+            switch currentIndex {
+            case 0:
+                self.width = 0 // Why?
+            case 1:
+                self.width = 100 // Appointment Location
+            case 2:
+                self.width = 200 //Gender?
+            case 3:
+                self.width = 300 // Religion?
+            default:
+                self.width = 0
+            }
+        }
+        .animation(.easeIn, value: width)
     }
 }
 
 #Preview {
-    LoadingBar()
+    LoadingBar(currentIndex: 2)
 }

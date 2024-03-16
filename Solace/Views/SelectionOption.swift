@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct SelectionOption: View {
+    @State var text: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        RoundedRectangle(cornerRadius: 40)
+            .frame(width: 300, height: 60)
+            .foregroundColor(.lightBrown)
+            .overlay (
+                Text(text)
+                    .foregroundColor(.white)
+                    .fontWeight(.medium)
+                    .font(.system(size: 20))
+            )
     }
 }
 
 #Preview {
-    SelectionOption()
+    SelectionOption(text: "Test")
 }

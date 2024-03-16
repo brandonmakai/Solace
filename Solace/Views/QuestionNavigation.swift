@@ -9,7 +9,19 @@ import SwiftUI
 
 struct QuestionNavigation: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            RoundedRectangle(cornerRadius: 30)
+                .frame(width: 350, height: 50)
+                .foregroundColor(.darkBrown)
+                .overlay (
+                    HStack(spacing: 4){
+                        Text("Next Steps")
+                        Image(systemName: "arrow.right")
+                    }
+                        .foregroundColor(.white)
+                        .fontWeight(.semibold)
+                        .font(.system(size: 30))
+                )
+            
     }
 }
 
