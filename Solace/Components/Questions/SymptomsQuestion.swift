@@ -17,11 +17,16 @@ enum Symptoms: String {
 let symptomImages = (symptom: Symptoms, image: String, color: Color).self
 
 struct SymptomsQuestion: View {
+    @EnvironmentObject var professionalView: ProfessionalView
+    @EnvironmentObject var userView: UserView
+    
     @State var currentIndex = 0
+    
+    let user = UserView.MOCKUSER
     var body: some View {
         NavigationStack{
             VStack{
-                LoadingBar(currentIndex: 0)
+                LoadingBar(currentIndex: currentIndex)
                 
                 Text("General Preferences")
                     .font(.largeTitle)
@@ -45,10 +50,14 @@ struct SymptomsQuestion: View {
                 }
                 .padding(.top, 50)
                 
-                NavigationLink{
-                    
-                }
+
                 Spacer()
+                NavigationLink {
+                    LocationQuestion()
+                        .navigationBarBackButtonHidden()
+                } label: {
+                    QuestionNavigation()
+                }
                 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -57,7 +66,7 @@ struct SymptomsQuestion: View {
         }
     }
     
-    func symptomRow(image: String, symptom: Symptoms, color: Color) -> some View {
+    func symptomRow(image: String, symptom: UserView.GeneralPreference, color: Color) -> some View {
         ZStack(alignment: .bottom){
             RoundedRectangle(cornerRadius: 5)
                 .frame(width: 180, height: 40)
@@ -66,6 +75,8 @@ struct SymptomsQuestion: View {
                     Text("\(symptom.rawValue)")
                         .fontWeight(.medium)
                 }
+                .shadow(radius: 10)
+
             Image(image)
                 .resizable()
                 .scaledToFill()

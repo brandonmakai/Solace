@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct SolaceApp: App {
+    @StateObject var professionalView = ProfessionalView()
+    @StateObject var userView = UserView()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SymptomsQuestion(currentIndex: 0)
+                .environmentObject(professionalView)
+                .environmentObject(userView)
         }
     }
 }
