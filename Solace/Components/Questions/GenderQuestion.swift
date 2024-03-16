@@ -17,19 +17,20 @@ struct GenderQuestion: View {
         VStack{
             LoadingBar(currentIndex: currentIndex)
             
-            Text("General Preferences")
+            Text("Pairing Preferences")
                 .customTitle()
             
             VStack{
                 Text("""
-            How would you like your appointment?
+            Which gender would you prefer?
             """)
                 .fontWeight(.semibold)
                 .font(.title)
                 .foregroundColor(.white)
                 VStack(spacing: 20) {
-                    SelectionOption(text: UserView.LocationPreference.online.rawValue)
-                    SelectionOption(text: UserView.LocationPreference.inPerson.rawValue)
+                    SelectionOption(text: UserView.GenderPreference.male.rawValue)
+                    SelectionOption(text: UserView.GenderPreference.female.rawValue)
+                    SelectionOption(text: UserView.GenderPreference.nonBinary.rawValue)
                     SelectionOption(text: UserView.LocationPreference.none.rawValue)
                 }
             }
@@ -37,7 +38,7 @@ struct GenderQuestion: View {
             
             Spacer()
             NavigationLink {
-                GenderQuestion()
+                ReligionQuestion()
                     .navigationBarBackButtonHidden()
             } label: {
                 QuestionNavigation()
