@@ -29,10 +29,8 @@ struct SymptomsQuestion: View {
                 LoadingBar(currentIndex: currentIndex)
                 
                 Text("General Preferences")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                    .padding(.trailing, 30)
-                    .padding(.top, 20)
+                    .customTitle()
+                
                 VStack{
                     Text("""
                     Why are you using
@@ -40,6 +38,8 @@ struct SymptomsQuestion: View {
                     """)
                     .fontWeight(.semibold)
                     .font(.title)
+                    .foregroundColor(.white)
+                    
                     LazyVGrid(columns: [GridItem(.fixed(20), spacing: 170),
                         GridItem(.fixed(20))], spacing: 30, content: {
                         symptomRow(image: "stressImage", symptom: .anxietyStress, color: .lightYellow)
@@ -62,7 +62,7 @@ struct SymptomsQuestion: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.lightYellow1)
-            .preferredColorScheme(.dark)
+            .preferredColorScheme(.light)
         }
     }
     
@@ -74,6 +74,7 @@ struct SymptomsQuestion: View {
                 .overlay {
                     Text("\(symptom.rawValue)")
                         .fontWeight(.medium)
+                        .foregroundColor(.white)
                 }
                 .shadow(radius: 10)
 

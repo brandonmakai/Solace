@@ -1,18 +1,18 @@
 //
-//  LocationQuest.swift
+//  TherapistPreferences.swift
 //  Solace
 //
-//  Created by Brandon Williams on 3/15/24.
+//  Created by Brandon Williams on 3/16/24.
 //
 
 import SwiftUI
 
-struct LocationQuestion: View {
+struct GenderQuestion: View {
     @EnvironmentObject var professionalView: ProfessionalView
     @EnvironmentObject var userView: UserView
     let user = UserView.MOCKUSER
     
-    @State var currentIndex = 1
+    @State var currentIndex = 2
     var body: some View {
         VStack{
             LoadingBar(currentIndex: currentIndex)
@@ -50,5 +50,5 @@ struct LocationQuestion: View {
 }
 
 #Preview {
-    LocationQuestion()
+    GenderQuestion()
 }
