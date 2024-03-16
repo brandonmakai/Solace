@@ -10,16 +10,29 @@ import CoreLocation
 
 class UserView: Identifiable, ObservableObject {
     
-    struct User {
+    struct User: Hashable {
         let id: UUID
         let firstName: String
         let lastName: String
         let icon: String
         let currentLocation: CLLocationCoordinate2D
         let preferences: Preference? = nil
+        var appointments: [Appointment]? = nil
+        var prescriptions: [Prescription]? = nil
+        
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(id)
+            hasher.combine(firstName)
+            hasher.combine(lastName)
+            hasher.combine(icon)
+            hasher.combine(currentLocation)
+            hasher.combine(preferences)
+            hasher.combine(appointments)
+            hasher.combine(prescriptions)
+        }
     }
     
-    struct Preference {
+    struct Preference: Hashable {
         let general: GeneralPreference
         let location: LocationPreference
         let religion: ReligiousPreference
@@ -82,5 +95,17 @@ class UserView: Identifiable, ObservableObject {
         let closestProfessionals = sortedProfessionals.prefix(4).map { $0.0 }
         
         return closestProfessionals
+    }
+}
+
+extension CLLocationCoordinate2D: Hashable {
+    
+    public static func == (lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
+        return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(latitude)
+        hasher.combine(longitude)
     }
 }

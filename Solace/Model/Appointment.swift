@@ -9,9 +9,11 @@ import Foundation
 import CoreLocation
 
 struct Appointment: Hashable {
-    var professional: ProfessionalView.Professional
-    var date: Date
-    var meeting: ProfessionalView.MeetingLocation
+    let id: UUID
+    let professional: ProfessionalView.Professional
+    let user: UserView.User
+    let date: Date
+    let meeting: ProfessionalView.MeetingLocation
     
     var monthShort: String {
         let dateFormatter = DateFormatter()
@@ -36,6 +38,7 @@ let date2 = Date(timeIntervalSinceNow: 86400) // 24 hours later
 
 // Initialize an array of appointments
 let appointments: [Appointment] = [
-    Appointment(professional: professional1, date: date1, meeting: .online),
-    Appointment(professional: professional2, date: date2, meeting: .inPerson)
+    Appointment(id: UUID(), professional: professional1, user: UserView.MOCKUSER, date: date1, meeting: .online),
+    Appointment(id: UUID(), professional: professional2, user: UserView.MOCKUSER, date: date2, meeting: .inPerson)
 ]
+
